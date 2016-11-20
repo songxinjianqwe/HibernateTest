@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-10-21 20:16:57 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="one2one.foreign">
+	<class name="HotelPO" table="HOTEL">
+		<id name="id" type="int">
+			<column name="HOTEL_ID" />
+			<generator class="native" />
+		</id>
+		<property name="name" type="java.lang.String">
+			<column name="HOTEL_NAME" />
+		</property>
+		<property name="star" type="int">
+			<column name="HOTEL_STAR" />
+		</property>
+		<property name="score" type="double">
+			<column name="HOTEL_SCORE" />
+		</property>
+		<many-to-one name="commercialCircle" class="CommercialCirclePO"
+			fetch="join">
+			<column name="HOTEL_LOC"></column>
+			<column name="HOTEL_CIRCLE"></column>
+		</many-to-one>
+
+		<property name="profile" type="java.lang.String">
+			<column name="HOTEL_PROFILE" />
+		</property>
+		<property name="service" type="java.lang.String">
+			<column name="HOTEL_SERVICE" />
+		</property>
+		<one-to-one name="staff" class="StaffPO" property-ref="hotel"></one-to-one>
+
+		<property name="street" type="java.lang.String">
+			<column name="HOTEL_STREET"></column>
+		</property>
+	</class>
+</hibernate-mapping>

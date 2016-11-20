@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-10-22 11:05:09 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="many2many.both">
+    <class name="Category" table="CATEGORY">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+     
+        <set name="items" table="CATEGORY_ITEM" >
+            <key>
+                <column name="CATEGORY_ID" />
+            </key>
+            <many-to-many class="Item"  column="ITEM_ID"></many-to-many>
+        </set>
+        
+    </class>
+</hibernate-mapping>

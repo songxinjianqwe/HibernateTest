@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-11-13 12:21:49 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="AvailableRoomPO" table="AVAILABLEROOMPO">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="hotel" class="HotelPO" fetch="join">
+            <column name="HOTEL" />
+        </many-to-one>
+        <property name="type">
+            <column name="TYPE" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">util.type.RoomType</param>
+            </type>
+        </property>
+        <property name="availableRoomNum" type="int">
+            <column name="AVAILABLEROOMNUM" />
+        </property>
+        <property name="roomDate" type="java.util.Date">
+            <column name="ROOMDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

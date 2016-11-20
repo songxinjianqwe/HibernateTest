@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-10-20 19:07:16 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="mappingrelation">
+    <class name="Worker" table="WORKER">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="native" />
+        </id>
+        <property name="name" type="java.lang.String">
+            <column name="NAME" />
+        </property>
+       
+       	<component name="pay" class="Pay">
+       		<parent name="worker"/>
+			<property name="monthPay" type="int">
+				<column name="MONTHPAY" />
+			</property>
+	        <property name="yearPay" type="int">
+	            <column name="YEARPAY" />
+	        </property>
+	        <property name="vacationWithPay" type="int">
+	            <column name="VACATIONWITHPAY" />
+	        </property>
+       	</component>
+    	
+    </class>
+</hibernate-mapping>

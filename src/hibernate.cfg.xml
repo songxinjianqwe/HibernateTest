@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<session-factory>
+		<property name="connection.username">root</property>
+		<property name="connection.password">130119</property>
+		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="connection.url">jdbc:mysql://localhost:3306/hotelreservationsystem</property>
+		<property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		<property name="hbm2ddl.auto">update</property>
+		<property name="hibernate.c3p0.max_size">10</property>
+		<property name="hibernate.c3p0.min_size">5</property>
+		<property name="c3p0.acquire_increment">2</property>
+		<property name="c3p0.idle_test_period">2000</property>
+		<property name="c3p0.timeout">2000</property>
+		<property name="c3p0.max_statements">10</property>
+
+		<!-- 配置管理Session的方式 -->
+		<property name="current_session_context_class">thread</property>
+
+		<mapping resource="hql/pojo/Department.hbm.xml" />
+		<mapping resource="hql/pojo/Employee.hbm.xml" />
+
+	</session-factory>
+</hibernate-configuration>

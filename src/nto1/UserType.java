@@ -1,0 +1,15 @@
+package nto1;
+
+public enum UserType {
+	Normal, Enterprise;
+	public static UserType getUserType(String type) {
+		switch (type) {
+		case "Normal":
+			return Normal;
+		case "Enterprise":
+			return Enterprise;
+		default:
+			return null;
+		}
+	}
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-10-21 20:32:45 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="one2one.primary">
+    <class name="StaffPO" table="STAFFPO">
+        <id name="id" type="int">
+            <column name="STAFF_ID" />
+            <generator class="foreign">
+            	<param name="property">hotel</param> 
+            	<!-- param的值是当前POJO中持有的另一个对象的变量名 -->
+            </generator>
+        </id>
+        <property name="username" type="java.lang.String">
+            <column name="STAFF_USERNAME" />
+        </property>
+        <property name="password" type="java.lang.String">
+            <column name="STAFF_PASSWORD" />
+        </property>
+        <property name="name" type="java.lang.String">
+            <column name="STAFF_NAME" />
+        </property>
+        <property name="type">
+            <column name="STAFF_TYPE" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">one2one.primary.StaffType</param>
+            </type>
+        </property>
+        
+       <one-to-one name="hotel" class="HotelPO" constrained="true"></one-to-one>
+        
+    </class>
+</hibernate-mapping>

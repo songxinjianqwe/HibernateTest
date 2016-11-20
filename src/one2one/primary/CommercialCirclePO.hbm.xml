@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2016-10-21 20:57:08 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="one2one.primary">
+    <class name="CommercialCirclePO" table="COMMERCIAL_CIRCLE">
+        <composite-id> 
+           <key-many-to-one name="location" class="LocationPO" column="LOC_ID" ></key-many-to-one> 
+           <key-property name="id" column="CIRCLE_ID" type="int"></key-property>
+        </composite-id>  
+        <property name="name" type="java.lang.String">
+            <column name="CIRCLE_NAME" />
+        </property>
+    </class>
+</hibernate-mapping>
+
+ 		
