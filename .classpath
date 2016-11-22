@@ -22,5 +22,6 @@
 	<classpathentry kind="lib" path="lib/hibernate-c3p0-5.2.3.Final.jar"/>
 	<classpathentry kind="lib" path="lib/mchange-commons-java-0.2.3.4.jar"/>
 	<classpathentry kind="lib" path="lib/javassist-3.20.0-GA.jar"/>
+	<classpathentry kind="lib" path="lib/ehcache.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

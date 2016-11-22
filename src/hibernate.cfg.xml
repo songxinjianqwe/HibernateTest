@@ -18,12 +18,18 @@
 		<property name="c3p0.idle_test_period">2000</property>
 		<property name="c3p0.timeout">2000</property>
 		<property name="c3p0.max_statements">10</property>
-
+	
+		<!-- 启用二级缓存 -->
+		<property name="hibernate.cache.use_second_level_cache">true</property>
+		<!-- 配置产品类型 -->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.EhCacheRegionFactory</property>
+		<!-- 配置哪些类使用二级缓存 -->
+		<class-cache usage="read-write" class=""/>
 		<!-- 配置管理Session的方式 -->
 		<property name="current_session_context_class">thread</property>
 
 		<mapping resource="hql/pojo/Department.hbm.xml" />
 		<mapping resource="hql/pojo/Employee.hbm.xml" />
-
+	
 	</session-factory>
 </hibernate-configuration>

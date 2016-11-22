@@ -1,12 +1,3 @@
-/hql/
-/joinedsubclass/
-/many2many/
-/mappingrelation/
-/nto1/
-/one2one/
-/subclass/
-/unionsubclass/
-/util/
 /AvailableRoomPO.class
 /CommercialCirclePO.class
 /CreditRecordPO.class
@@ -21,4 +12,13 @@
 /UserPO.class
 /WebDiscountPO.class
 /helloworld/
-/hibernate.cfg.xml
+/hql/
+/joinedsubclass/
+/many2many/
+/mappingrelation/
+/nto1/
+/one2one/
+/subclass/
+/unionsubclass/
+/util/
+/ehcache.xml
